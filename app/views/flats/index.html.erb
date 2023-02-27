@@ -1,0 +1,22 @@
+
+  <div class="container m-10">
+    <h2>Check out our Flats!!</h2>
+  </div>
+
+  <div class="container m-10">
+    <div class="row">
+      <% @flats.each do |flat| %>
+        <div class="col-md-3">
+          <div class="card h-100 text-center mb-5">
+            <img src="https://www.realestate.com.au/blog/images/800x450-fit,progressive,format=webp/2018/05/28101812/capi_92dd3d6ffb358967c861a8afdf4627aa_8f31c5a6589454ae46974234f3d1fc54.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= flat.name %></h5>
+              <p class="card-text"><%= flat.address %></p>
+              <p class="card-text"><small class="text-muted"><i class="fas fa-user"> - <%= flat.number_of_guests %></i> <i class="fas fa-dollar-sign"> - <%= flat.price_per_night %></i></small></p>
+              <button class="btn btn-outline-primary my-2 my-sm-0 mr-3" type="submit"><%= link_to 'More Details', flat_path(flat) %></button>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
